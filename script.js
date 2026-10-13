@@ -89,9 +89,29 @@ var alice = {
 }
 
 
+var bob = {
+	x: 600,
+	y: 300,
+	sprite: null,
+	stapGrootte: null,
+
+	beweeg() {
+		this.x += floor(random(-1,2))*this.stapGrootte;
+		this.y += floor(random(-1,2))*this.stapGrootte;
+
+		this.x = constrain(this.x,0,canvas.width - raster.celGrootte);
+		this.y = constrain(this.y,0,canvas.height - raster.celGrootte);
+	},
+
+	toon() {
+		image(this.sprite,this.x,this.y,raster.celGrootte,raster.celGrootte);
+	}
+}
+
 function preload() {
 	brug = loadImage("images/backgrounds/dame_op_brug_1800.jpg");
 	alice.sprite = loadImage("images/sprites/Alice100px/Alice.png");
+bob.sprite = loadImage("images/sprites/Bob100px/Bob.png");
 	for (var b = 0;b < jos.aantalFrames;b++) {
 		frameJos = loadImage("images/sprites/Jos100px/Jos_" + b + ".png");
 		jos.animatie.push(frameJos);
@@ -107,6 +127,7 @@ function setup() {
 	raster.berekenCelGrootte();
 	jos.stapGrootte = 1*raster.celGrootte;
 	alice.stapGrootte = 1*raster.celGrootte;
+	bob.stapGrootte = 1*raster.celGrootte;
 }
 
 function draw() {
@@ -114,8 +135,10 @@ function draw() {
 	raster.teken();
 	jos.beweeg();
 	alice.beweeg();
+	bob.beweeg();
 	jos.toon();
 	alice.toon();
+	bob.toon();
 	if (jos.wordtGeraakt(alice)) {
 		noLoop();
 	}
