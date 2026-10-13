@@ -111,6 +111,7 @@ var bob = {
 function preload() {
 	brug = loadImage("images/backgrounds/dame_op_brug_1800.jpg");
 	alice.sprite = loadImage("images/sprites/Alice100px/Alice.png");
+// Bob needs his own loaded image before bob.toon() can draw him.
 bob.sprite = loadImage("images/sprites/Bob100px/Bob.png");
 	for (var b = 0;b < jos.aantalFrames;b++) {
 		frameJos = loadImage("images/sprites/Jos100px/Jos_" + b + ".png");
