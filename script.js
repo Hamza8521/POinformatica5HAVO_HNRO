@@ -1,7 +1,4 @@
 var raster = {
-		aantalRijen: 12,
-
-var raster = {
 	aantalRijen: 12,
 	aantalKolommen: 18,
 	celGrootte: null,
@@ -10,7 +7,6 @@ var raster = {
 		this.celGrootte = canvas.width/this.aantalKolommen;
 	},
 	teken() {
-		background('violet')
 		push();
 		noFill();
 		stroke('grey');
@@ -164,7 +160,7 @@ var bom2 = {
 };
 
 function preload() {
-	brug = loadImage("images/backgrounds/dame_op_brug_1800.jpg");
+	brug = loadImage("images/backgrounds/gifgif.gif");
 	alice.sprite = loadImage("images/sprites/Alice100px/Alice.png");
 	bob.sprite = alice.sprite;
 	
