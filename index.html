@@ -1,14 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
-  </head>
-  <body>
-    <div id="processing"></div>
-    <script src="script.js"></script>
-  </body>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mijn game</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    #processing {
+      position: relative;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+
+  <!-- Laad eerst de p5.js-bibliotheek -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
+</head>
+
+<body>
+  <div id="processing"></div>
+
+  <!-- Laad daarna de code van je game -->
+  <script src="script.js"></script>
+</body>
 </html>
+```
